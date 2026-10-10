@@ -151,10 +151,10 @@ export const ReportsView: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="no-print flex items-center gap-1 border-b border-slate-200 pb-2">
+      <div className="no-print flex items-center gap-1.5 border-b border-slate-200 pb-2 overflow-x-auto whitespace-nowrap">
         <button
           onClick={() => setActiveReportTab('billing')}
-          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer shrink-0 min-h-[36px] ${
             activeReportTab === 'billing'
               ? 'bg-slate-900 text-white'
               : 'text-slate-600 hover:bg-slate-100'
@@ -164,7 +164,7 @@ export const ReportsView: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveReportTab('collections')}
-          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer shrink-0 min-h-[36px] ${
             activeReportTab === 'collections'
               ? 'bg-slate-900 text-white'
               : 'text-slate-600 hover:bg-slate-100'
@@ -174,7 +174,7 @@ export const ReportsView: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveReportTab('arrears')}
-          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer shrink-0 min-h-[36px] ${
             activeReportTab === 'arrears'
               ? 'bg-slate-900 text-white'
               : 'text-slate-600 hover:bg-slate-100'
@@ -184,7 +184,7 @@ export const ReportsView: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveReportTab('consumption')}
-          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer shrink-0 min-h-[36px] ${
             activeReportTab === 'consumption'
               ? 'bg-slate-900 text-white'
               : 'text-slate-600 hover:bg-slate-100'
@@ -195,8 +195,8 @@ export const ReportsView: React.FC = () => {
       </div>
 
       {/* Active Table View */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden p-6 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden p-4 sm:p-6 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
           <div>
             <h3 className="text-sm font-bold text-slate-900">
               {activeReportTab === 'billing' && 'Monthly Billing Schedule Report'}
@@ -208,6 +208,8 @@ export const ReportsView: React.FC = () => {
           </div>
           <span className="text-xs text-slate-400 font-mono">Date: {new Date().toISOString().split('T')[0]}</span>
         </div>
+
+        <div className="overflow-x-auto">
 
         {activeReportTab === 'billing' && (
           <table className="w-full text-left text-xs">
@@ -341,6 +343,7 @@ export const ReportsView: React.FC = () => {
             </tbody>
           </table>
         )}
+        </div>
       </div>
     </div>
   );

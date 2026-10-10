@@ -2,6 +2,7 @@
   "name": "ZUCAR Water Billing System",
   "description": "Standard Water Billing Management System for utilities, estates and institutions. Web portal and mobile app for meter reading, automatic tariff billing, payments, and reporting.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
-

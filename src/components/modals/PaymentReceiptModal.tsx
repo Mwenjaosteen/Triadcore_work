@@ -20,25 +20,25 @@ export const PaymentReceiptModal: React.FC<Props> = ({ payment, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-lg bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-2 sm:my-8 max-h-[92vh] flex flex-col">
         {/* Controls */}
-        <div className="no-print flex items-center justify-between px-5 py-3 bg-slate-900 text-white">
+        <div className="no-print flex items-center justify-between px-4 sm:px-5 py-3 bg-slate-900 text-white shrink-0">
           <div className="flex items-center gap-2">
             <Receipt className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-semibold">Payment Receipt</span>
+            <span className="text-xs sm:text-sm font-semibold">Payment Receipt</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-medium bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg transition-colors cursor-pointer min-h-[36px]"
             >
               <Printer className="w-3.5 h-3.5" />
-              Print
+              <span>Print</span>
             </button>
             <button
               onClick={onClose}
-              className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer min-h-[36px] min-w-[36px] flex items-center justify-center"
               aria-label="Close receipt"
             >
               <X className="w-5 h-5" />
@@ -47,7 +47,7 @@ export const PaymentReceiptModal: React.FC<Props> = ({ payment, onClose }) => {
         </div>
 
         {/* Printable Receipt Paper Body */}
-        <div className="p-6 space-y-5 bg-white text-slate-900">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 bg-white text-slate-900 overflow-y-auto">
           <div className="text-center pb-4 border-b border-dashed border-slate-300">
             <div className="w-10 h-10 mx-auto mb-2 rounded-xl bg-cyan-600 overflow-hidden">
               <img

@@ -182,16 +182,16 @@ export const MobileAppContainer: React.FC = () => {
       </div>
 
       {/* Main Body */}
-      <div className="flex justify-center items-start py-4">
+      <div className="flex justify-center items-start py-1 sm:py-4">
         <div
           className={`${
             isPhoneFrame
-              ? 'w-full max-w-[400px] rounded-[40px] border-[10px] border-slate-900 shadow-2xl overflow-hidden bg-slate-900'
+              ? 'w-full max-w-full sm:max-w-[420px] rounded-2xl sm:rounded-[40px] border-0 sm:border-[10px] sm:border-slate-900 shadow-lg sm:shadow-2xl overflow-hidden bg-white sm:bg-slate-900'
               : 'w-full max-w-2xl bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden'
           }`}
         >
-          {/* Phone Shell Top Bar */}
-          <div className="bg-slate-900 text-white px-6 pt-3 pb-2 flex items-center justify-between text-xs">
+          {/* Phone Shell Top Bar (Shown when in mockup frame on tablet/desktop) */}
+          <div className="hidden sm:flex bg-slate-900 text-white px-6 pt-3 pb-2 items-center justify-between text-xs">
             <span className="font-semibold text-[11px] font-mono">09:41 AM</span>
             <div className="w-20 h-4 bg-slate-950 rounded-full mx-auto" />
             <div className="flex items-center gap-2">
@@ -205,7 +205,7 @@ export const MobileAppContainer: React.FC = () => {
           </div>
 
           {/* Mobile App Viewport */}
-          <div className="bg-slate-50 min-h-[640px] max-h-[750px] overflow-y-auto flex flex-col justify-between">
+          <div className="bg-slate-50 min-h-[560px] sm:min-h-[640px] sm:max-h-[750px] overflow-y-auto flex flex-col justify-between">
             {/* Top Bar inside App */}
             <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
